@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: your_username       # PostgreSQL 사용자 이름
+      POSTGRES_PASSWORD: your_password     # PostgreSQL 비밀번호
+      POSTGRES_DB: workflow_ce           # 생성할 데이터베이스 이름
+    ports:
+      - "5432:5432"                        # 호스트와 컨테이너의 포트 매핑
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 데이터 지속성을 위한 볼륨
+
+volumes:
+  postgres_data:
