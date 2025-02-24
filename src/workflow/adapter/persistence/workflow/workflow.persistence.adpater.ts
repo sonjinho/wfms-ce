@@ -33,8 +33,10 @@ export class WorkflowPersistenceAdapter
 
   async create(createCommand: CreateWorkflowCommand): Promise<Workflow> {
     const workflowEntity = this.workflowRepository.create({
+      code: createCommand.code,
       name: createCommand.name,
       description: createCommand.description,
+      tags: Object.fromEntries(createCommand.tags),
     } as WorkflowEntity);
 
     const savedEntity = await this.workflowRepository.save(workflowEntity);

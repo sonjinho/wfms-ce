@@ -1,11 +1,11 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { WorkflowStepInput } from 'src/workflow/domain/workflow-step-input';
-import { IWorkflowStepInputUseCase } from '../ports/in/workflow-step-input/workflow-step-input.usecase';
+import { WorkflowStepInputUseCase } from '../ports/in/workflow-step-input/workflow-step-input.usecase';
 import { LoadWorkflowStepInputPort } from '../ports/out/workflow-step-input/load.workflow-step-input.port';
 import { UpdateWorkflowStepInputPort } from '../ports/out/workflow-step-input/update.workflow-step-input.port';
 
 @Injectable()
-export class WorkflowStepInputService implements IWorkflowStepInputUseCase {
+export class WorkflowStepInputService implements WorkflowStepInputUseCase {
   constructor(
     @Inject(LoadWorkflowStepInputPort)
     private loadWorkflowStepInputPort: LoadWorkflowStepInputPort,

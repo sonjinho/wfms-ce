@@ -5,7 +5,7 @@ export class WorkflowStep {
   public readonly workflowId: number;
   public readonly name: string;
   public readonly description: string;
-  public readonly inputs: WorkflowStepInput[];
+  public inputs: WorkflowStepInput[];
 
   constructor(
     id: number,

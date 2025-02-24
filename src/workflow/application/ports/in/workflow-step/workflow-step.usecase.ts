@@ -1,6 +1,6 @@
 import { WorkflowStep } from 'src/workflow/domain/workflow.step';
 
-export interface IWorkflowStepUseCase {
+export interface WorkflowStepUseCase {
   create(step: WorkflowStep): Promise<WorkflowStep>;
   findAll(workflowId: number): Promise<WorkflowStep[]>;
   findOne(id: number): Promise<WorkflowStep>;
@@ -8,4 +8,4 @@ export interface IWorkflowStepUseCase {
   remove(id: number): Promise<void>;
 }
 
-export const IWorkflowStepUseCase = Symbol.for('IWorkflowStepUseCase');
+export const WorkflowStepUseCase = Symbol.for('WorkflowStepUseCase');

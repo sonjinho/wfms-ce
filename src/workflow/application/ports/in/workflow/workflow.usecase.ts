@@ -2,7 +2,7 @@ import { Workflow } from 'src/workflow/domain/workflow';
 import { CreateWorkflowCommand } from './create.workflow.command';
 import { UpdateWorkflowCommand } from './update.workflow.command';
 
-export interface IWorkflowUseCase {
+export interface WorkflowUseCase {
   create(createCommand: CreateWorkflowCommand): Promise<Workflow>;
   findAll(): Promise<Workflow[]>;
   findOne(id: number): Promise<Workflow>;
@@ -10,4 +10,4 @@ export interface IWorkflowUseCase {
   remove(id: number): Promise<void>;
 }
 
-export const IWorkflowUseCase = Symbol.for('IWorkflowUseCase');
+export const WorkflowUseCase = Symbol.for('WorkflowUseCase');

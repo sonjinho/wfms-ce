@@ -9,7 +9,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { CreateWorkflowCommand } from 'src/workflow/application/ports/in/workflow/create.workflow.command';
-import { IWorkflowUseCase } from 'src/workflow/application/ports/in/workflow/workflow.usecase';
+import { WorkflowUseCase } from 'src/workflow/application/ports/in/workflow/workflow.usecase';
 import { CreateWorkflowDto } from './dto/create-workflow.dto';
 import { UpdateWorkflowDto } from './dto/update-workflow.dto';
 import { WorkflowDTO } from './dto/workflow.dto';
@@ -18,7 +18,7 @@ import { WorkflowDTO } from './dto/workflow.dto';
 export class WorkflowController {
   constructor(
     @Inject(IWorkflowUseCase)
-    private readonly workflowService: IWorkflowUseCase,
+    private readonly workflowService: WorkflowUseCase,
   ) {}
 
   @Post()

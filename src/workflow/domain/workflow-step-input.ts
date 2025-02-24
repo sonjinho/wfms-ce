@@ -2,12 +2,11 @@ export enum WorkflowInputType {
   TEXT = 'TEXT',
   NUMBER = 'NUMBER',
   DATE = 'DATE',
-  // 추가적인 타입을 여기에 정의할 수 있습니다.
 }
 export class WorkflowStepInput {
-  public readonly id: number | null;
-  public readonly workflowId: number;
-  public readonly stepId: number;
+  public readonly id: number;
+  public workflowId: number;
+  public stepId: number;
   public readonly isRequired: boolean;
   public readonly isSummary: boolean;
   public readonly isGlobal: boolean;
@@ -22,7 +21,7 @@ export class WorkflowStepInput {
   public readonly options: string[];
 
   constructor(
-    id: number | null,
+    id: number,
     workflowId: number,
     stepId: number,
     isRequired: boolean,
