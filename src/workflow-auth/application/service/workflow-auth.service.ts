@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Inject, Injectable } from '@nestjs/common';
-import { WorkflowAuth } from 'src/workflow/domain/auth/workflow-auth';
-import { WorkflowPermission } from 'src/workflow/domain/auth/workflow-permissions';
-import { WorkflowAuthUseCase } from '../../ports/in/workflow-auth/workflow.auth.usecase';
-import { WorkflowUseCase } from '../../ports/in/workflow/workflow.usecase';
-import { LoadWorkflowAuthPort } from '../../ports/out/workflow-auth/load.workflow-auth.port';
-import { UpdateWorkflowAuthPort } from '../../ports/out/workflow-auth/update.workflow-auth.port';
+import { WorkflowAuth } from 'src/workflow-auth/domain/workflow-auth';
+import { WorkflowPermission } from 'src/workflow-auth/domain/workflow-permissions';
+import { WorkflowAuthUseCase } from '../in/workflow.auth.usecase';
+import { WorkflowUseCase } from '../../../workflow/application/ports/in/workflow/workflow.usecase';
+import { LoadWorkflowAuthPort } from '../out/load.workflow-auth.port';
+import { UpdateWorkflowAuthPort } from '../out/update.workflow-auth.port';
 @Injectable()
 export class WorkflowAuthService implements WorkflowAuthUseCase {
   constructor(

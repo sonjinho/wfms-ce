@@ -1,5 +1,5 @@
-import { WorkflowStepAuth } from 'src/workflow/domain/auth/workflow-step-auth';
-import { WorkflowStepPermission } from 'src/workflow/domain/auth/workflow-step-permissions';
+import { WorkflowStepAuth } from 'src/workflow-auth/domain/workflow-step-auth';
+import { WorkflowStepPermission } from 'src/workflow-auth/domain/workflow-step-permissions';
 
 export interface WorkflowStepAuthUseCase {
   create(workflowStepAuth: WorkflowStepAuth): Promise<WorkflowStepAuth>;

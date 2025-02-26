@@ -4,9 +4,12 @@ export class WorkflowStepAuth {
   public readonly workflowStepId: number;
   private groupPermissions: Record<string, WorkflowStepPermission[]>;
 
-  constructor(workflowStepId: number) {
+  constructor(
+    workflowStepId: number,
+    groupPermissions: Record<string, WorkflowStepPermission[]>,
+  ) {
     this.workflowStepId = workflowStepId;
-    this.groupPermissions = {};
+    this.groupPermissions = groupPermissions;
   }
 
   public addGroupPermission(

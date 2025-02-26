@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Inject, Injectable } from '@nestjs/common';
-import { WorkflowStepAuth } from 'src/workflow/domain/auth/workflow-step-auth';
-import { WorkflowStepPermission } from 'src/workflow/domain/auth/workflow-step-permissions';
-import { WorkflowStepAuthUseCase } from '../../ports/in/workflow-auth/workflow-step.auth.usecase';
-import { WorkflowStepUseCase } from '../../ports/in/workflow-step/workflow-step.usecase';
-import { LoadWorkflowStepAuthPort } from '../../ports/out/workflow-auth/load.workflow-step-auth.port';
-import { UpdateWorkflowStepAuthPort } from '../../ports/out/workflow-auth/update.workflow-step-auth';
+import { WorkflowStepAuth } from 'src/workflow-auth/domain/workflow-step-auth';
+import { WorkflowStepPermission } from 'src/workflow-auth/domain/workflow-step-permissions';
+import { WorkflowStepAuthUseCase } from '../in/workflow-step.auth.usecase';
+import { WorkflowStepUseCase } from '../../../workflow/application/ports/in/workflow-step/workflow-step.usecase';
+import { LoadWorkflowStepAuthPort } from '../out/load.workflow-step-auth.port';
+import { UpdateWorkflowStepAuthPort } from '../out/update.workflow-step-auth';
 
 @Injectable()
 export class WorkflowStepAuthService implements WorkflowStepAuthUseCase {

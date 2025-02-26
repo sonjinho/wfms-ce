@@ -1,5 +1,5 @@
-import { WorkflowAuth } from 'src/workflow/domain/auth/workflow-auth';
-import { WorkflowPermission } from 'src/workflow/domain/auth/workflow-permissions';
+import { WorkflowAuth } from 'src/workflow-auth/domain/workflow-auth';
+import { WorkflowPermission } from 'src/workflow-auth/domain/workflow-permissions';
 
 export interface WorkflowAuthUseCase {
   create(workflowAuth: WorkflowAuth): Promise<WorkflowAuth>;

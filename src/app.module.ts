@@ -9,6 +9,9 @@ import { WorkflowStepEntity } from './workflow/adapter/persistence/workflow/enti
 import { ProjectModule } from './project/project.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ProjectTimelineModule } from './project-timeline/project-timeline.module';
+import { WorkflowControlModule } from './workflow-control/workflow-control.module';
+import { WorkflowEventModule } from './workflow-event/workflow-event.module';
+import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { ProjectTimelineModule } from './project-timeline/project-timeline.modul
     }),
     ProjectModule,
     ProjectTimelineModule,
+    WorkflowControlModule,
+    WorkflowEventModule,
+    WorkflowAuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

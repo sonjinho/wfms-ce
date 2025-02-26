@@ -4,9 +4,12 @@ export class WorkflowAuth {
   public readonly workflowId: number;
   private groupPermissions: Record<string, WorkflowPermission[]>;
 
-  constructor(workflowId: number) {
+  constructor(
+    workflowId: number,
+    groupPermissions: Record<string, WorkflowPermission[]>,
+  ) {
     this.workflowId = workflowId;
-    this.groupPermissions = {};
+    this.groupPermissions = groupPermissions;
   }
 
   // 그룹에 권한 추가
