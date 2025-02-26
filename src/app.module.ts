@@ -1,17 +1,15 @@
 import { Module } from '@nestjs/common';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { WorkflowEntity } from './workflow/adapter/persistence/workflow/entity/workflow.entity';
-import { WorkflowModule } from './workflow/workflow.module';
-import { WorkflowStepInputEntity } from './workflow/adapter/persistence/workflow/entity/workflow-step-input.entity';
-import { WorkflowStepEntity } from './workflow/adapter/persistence/workflow/entity/workflow-step.entity';
-import { ProjectModule } from './project/project.module';
-import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ProjectTimelineModule } from './project-timeline/project-timeline.module';
+import { ProjectModule } from './project/project.module';
+import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
 import { WorkflowControlModule } from './workflow-control/workflow-control.module';
 import { WorkflowEventModule } from './workflow-event/workflow-event.module';
-import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
+import { WorkflowModule } from './workflow/workflow.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -26,7 +24,7 @@ import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
       username: 'your_username', // docker-compose에서 설정한 사용자 이름
       password: 'your_password', // docker-compose에서 설정한 비밀번호
       database: 'workflow_ce', // docker-compose에서 설정한 데이터베이스 이름
-      entities: [WorkflowEntity, WorkflowStepEntity, WorkflowStepInputEntity],
+      entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: true, // 개발 중에는 true, 프로덕션에서는 false 권장
     }),
     ProjectModule,
@@ -34,6 +32,7 @@ import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
     WorkflowControlModule,
     WorkflowEventModule,
     WorkflowAuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
