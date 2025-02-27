@@ -8,6 +8,7 @@ export class WorkflowStepInput {
   public readonly id: number;
   public workflowId: number;
   public stepId: number;
+  public order: number;
   public readonly isRequired: boolean;
   public readonly isSummary: boolean;
   public readonly isGlobal: boolean;
@@ -25,6 +26,7 @@ export class WorkflowStepInput {
     id: number,
     workflowId: number,
     stepId: number,
+    order: number,
     isRequired: boolean,
     isSummary: boolean,
     isGlobal: boolean,
@@ -41,6 +43,7 @@ export class WorkflowStepInput {
     this.id = id;
     this.workflowId = workflowId;
     this.stepId = stepId;
+    this.order = order;
     this.isRequired = isRequired;
     this.isSummary = isSummary;
     this.isGlobal = isGlobal;

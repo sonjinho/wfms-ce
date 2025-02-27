@@ -36,6 +36,7 @@ export function mapToWorkflowInputDomain(
     entity.id,
     entity.workflow.id,
     entity.workflowStep.id,
+    entity.order,
     entity.isRequired,
     entity.isSummary,
     entity.isGlobal,

@@ -16,6 +16,8 @@ export class WorkflowStepInputEntity {
     lazy: true,
   })
   workflowStep: WorkflowStepEntity;
+  @Column({ name: 'input_order', nullable: false, default: 1 })
+  order: number = 1;
 
   @Column({
     type: 'boolean',

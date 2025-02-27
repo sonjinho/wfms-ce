@@ -5,11 +5,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProjectTimelineModule } from './project-timeline/project-timeline.module';
 import { ProjectModule } from './project/project.module';
+import { UsersModule } from './users/users.module';
 import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
-import { WorkflowControlModule } from './workflow-control/workflow-control.module';
 import { WorkflowEventModule } from './workflow-event/workflow-event.module';
 import { WorkflowModule } from './workflow/workflow.module';
-import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -29,7 +28,6 @@ import { UsersModule } from './users/users.module';
     }),
     ProjectModule,
     ProjectTimelineModule,
-    WorkflowControlModule,
     WorkflowEventModule,
     WorkflowAuthModule,
     UsersModule,
