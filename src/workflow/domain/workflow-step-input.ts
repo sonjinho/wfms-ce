@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 export enum WorkflowInputType {
   TEXT = 'TEXT',
   NUMBER = 'NUMBER',
@@ -18,7 +19,7 @@ export class WorkflowStepInput {
   public readonly minDate: Date;
   public readonly maxDate: Date;
   public readonly multiple: boolean;
-  public readonly options: string[];
+  public readonly options: any;
 
   constructor(
     id: number,
@@ -35,7 +36,7 @@ export class WorkflowStepInput {
     minDate: Date,
     maxDate: Date,
     multiple: boolean,
-    options: string[],
+    options: any,
   ) {
     this.id = id;
     this.workflowId = workflowId;

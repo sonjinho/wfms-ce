@@ -74,6 +74,6 @@ export class WorkflowStepInputEntity {
   maxDate: Date;
   @Column({ name: 'multiple', nullable: false, default: false })
   multiple: boolean;
-  @Column('text', { nullable: true, array: true, name: 'options' })
-  options: string[];
+  @Column('jsonb', { nullable: true, array: true, name: 'options' })
+  options: any;
 }
