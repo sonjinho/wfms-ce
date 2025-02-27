@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { WorkflowStepInputEntity } from './adapter/persistence/workflow/entity/workflow-step-input.entity';
-import { WorkflowStepEntity } from './adapter/persistence/workflow/entity/workflow-step.entity';
-import { WorkflowEntity } from './adapter/persistence/workflow/entity/workflow.entity';
-import { WorkflowStepPersistenceAdapter } from './adapter/persistence/workflow/workflow-step.persistence.adapter';
-import { WorkflowPersistenceAdapter } from './adapter/persistence/workflow/workflow.persistence.adpater';
+import { WorkflowStepInputEntity } from './adapter/persistence/entity/workflow-step-input.entity';
+import { WorkflowStepEntity } from './adapter/persistence/entity/workflow-step.entity';
+import { WorkflowEntity } from './adapter/persistence/entity/workflow.entity';
+import { WorkflowStepPersistenceAdapter } from './adapter/persistence/workflow-step.persistence.adapter';
+import { WorkflowPersistenceAdapter } from './adapter/persistence/workflow.persistence.adpater';
 import { WorkflowController } from './adapter/web/workflow.controller';
 import { WorkflowStepInputUseCase } from './application/ports/in/workflow-step-input/workflow-step-input.usecase';
 import { WorkflowStepUseCase } from './application/ports/in/workflow-step/workflow-step.usecase';
