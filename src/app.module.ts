@@ -9,6 +9,7 @@ import { UsersModule } from './users/users.module';
 import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
 import { WorkflowEventModule } from './workflow-event/workflow-event.module';
 import { WorkflowModule } from './workflow/workflow.module';
+import { WorkflowStateMachineModule } from './workflow-state-machine/workflow-state-machine.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { WorkflowModule } from './workflow/workflow.module';
     WorkflowEventModule,
     WorkflowAuthModule,
     UsersModule,
+    WorkflowStateMachineModule,
   ],
   controllers: [AppController],
   providers: [AppService],

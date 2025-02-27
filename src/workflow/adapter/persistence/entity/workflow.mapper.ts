@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { WorkflowItem } from 'src/workflow/domain/workflow';
 import { WorkflowStepInput } from 'src/workflow/domain/workflow-step-input';
 import { WorkflowStep } from 'src/workflow/domain/workflow.step';
@@ -28,26 +29,44 @@ export function mapToWorkflowStepDomain(
     entity.workflowInputs.map((input) => mapToWorkflowInputDomain(input)),
   );
 }
-
 export function mapToWorkflowInputDomain(
   entity: WorkflowStepInputEntity,
 ): WorkflowStepInput {
-  return new WorkflowStepInput(
-    entity.id,
-    entity.workflow.id,
-    entity.workflowStep.id,
-    entity.order,
-    entity.isRequired,
-    entity.isSummary,
-    entity.isGlobal,
-    entity.name,
-    entity.label,
-    entity.type,
-    entity.minValue,
-    entity.maxValue,
-    entity.minDate,
-    entity.maxDate,
-    entity.multiple,
-    entity.options,
-  );
+  const {
+    id,
+    workflow: { id: workflowId },
+    workflowStep: { id: stepId },
+    order,
+    isRequired,
+    isSummary,
+    isGlobal,
+    name,
+    label,
+    type,
+    minValue,
+    maxValue,
+    minDate,
+    maxDate,
+    multiple,
+    options,
+  } = entity;
+
+  return new WorkflowStepInput({
+    id,
+    workflowId,
+    stepId,
+    order,
+    isRequired,
+    isSummary,
+    isGlobal,
+    name,
+    label,
+    type,
+    minValue,
+    maxValue,
+    minDate,
+    maxDate,
+    multiple,
+    options,
+  });
 }
