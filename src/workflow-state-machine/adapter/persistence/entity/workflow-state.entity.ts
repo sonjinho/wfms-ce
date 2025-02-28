@@ -16,4 +16,10 @@ export class WorkflowStateEntity {
     eager: false,
   })
   step: WorkflowStepEntity;
+
+  @Column({ default: false })
+  initial: boolean;
+
+  @Column({ default: false })
+  final: boolean;
 }

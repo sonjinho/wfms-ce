@@ -5,6 +5,8 @@ export class WorkflowState {
   public readonly order: number;
   public readonly name: string;
   public readonly stepId: number;
+  public readonly initial: boolean = false;
+  public readonly final: boolean = false;
 
   // 상태에서 전이를 관리하는 방식으로, 단방향 관계로 연결
   public readonly outgoingTransitions?: WorkflowTransition[];
