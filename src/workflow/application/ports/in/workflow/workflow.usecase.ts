@@ -5,7 +5,7 @@ import { UpdateWorkflowCommand } from './update.workflow.command';
 export interface WorkflowUseCase {
   create(createCommand: CreateWorkflowCommand): Promise<Workflow>;
   findAll(): Promise<Workflow[]>;
-  findOne(id: number): Promise<Workflow>;
+  load(id: number): Promise<Workflow>;
   update(id: number, updateCommand: UpdateWorkflowCommand): Promise<Workflow>;
   remove(id: number): Promise<void>;
 }

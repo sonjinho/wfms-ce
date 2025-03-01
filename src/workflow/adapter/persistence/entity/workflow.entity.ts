@@ -2,9 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { WorkflowStepEntity } from './workflow-step.entity';
 
 @Entity('workflows')
 export class WorkflowEntity {
@@ -37,6 +39,12 @@ export class WorkflowEntity {
     name: 'tags',
   })
   tags: { [key: string]: string };
+
+  @OneToOne(() => WorkflowStepEntity, (step) => step.workflow, {
+    eager: true,
+    nullable: true,
+  })
+  initStep: WorkflowStepEntity;
 
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
   createdAt: Date;

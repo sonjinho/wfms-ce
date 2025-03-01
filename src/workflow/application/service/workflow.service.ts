@@ -25,7 +25,7 @@ export class WorkflowService implements WorkflowUseCase {
   findAll(): Promise<Workflow[]> {
     return this.loadWorkflowPort.findAll();
   }
-  findOne(id: number): Promise<Workflow> {
+  load(id: number): Promise<Workflow> {
     return this.loadWorkflowPort.findOne(id);
   }
   update(id: number, updateCommand: UpdateWorkflowCommand): Promise<Workflow> {

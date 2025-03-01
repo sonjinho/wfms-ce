@@ -29,3 +29,11 @@ export class WorkflowEvent {
     this.createdAt = createdAt;
   }
 }
+
+// Empty Event
+export class WorkflowSimpleEvent {
+  public readonly id?: string;
+  public readonly name: string;
+  public readonly type: WorkflowEventType = WorkflowEventType.COMPLETE;
+  public readonly createdAt?: Date;
+}

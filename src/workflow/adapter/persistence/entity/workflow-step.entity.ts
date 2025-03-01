@@ -22,6 +22,12 @@ export class WorkflowStepEntity {
     length: 1000,
     nullable: true,
   })
+  @Column()
+  oder: number;
+  @Column({ default: false })
+  init: boolean;
+  @Column({ default: false })
+  final: boolean;
   description: string;
   @OneToMany(
     () => WorkflowStepInputEntity,

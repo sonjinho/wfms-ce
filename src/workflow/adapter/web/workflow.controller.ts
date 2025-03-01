@@ -17,7 +17,7 @@ import { WorkflowDTO } from './dto/workflow.dto';
 @Controller('workflow')
 export class WorkflowController {
   constructor(
-    @Inject(IWorkflowUseCase)
+    @Inject(WorkflowUseCase)
     private readonly workflowService: WorkflowUseCase,
   ) {}
 
@@ -25,6 +25,7 @@ export class WorkflowController {
   create(@Body() createWorkflowDto: CreateWorkflowDto) {
     return this.workflowService.create(
       new CreateWorkflowCommand(
+        '',
         createWorkflowDto.name,
         createWorkflowDto.description,
         createWorkflowDto.tags,
@@ -44,7 +45,7 @@ export class WorkflowController {
   @Get(':id')
   findOne(@Param('id') id: number) {
     return this.workflowService
-      .findOne(id)
+      .load(id)
       .then((workflow) => WorkflowDTO.fromDomainModel(workflow));
   }
 

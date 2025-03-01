@@ -27,5 +27,5 @@ export class WorkflowTransitionEntity {
   condition: string;
 
   @Column()
-  action: string;
+  eventId: string;
 }

@@ -15,7 +15,13 @@ export class WorkflowStateService implements WorkflowStateUseCase {
     @Inject(UpdateWorkflowStatePort)
     private readonly updateWorkflowStatePort: UpdateWorkflowStatePort,
   ) {}
-  async execute(stepId: number): Promise<WorkflowTransition> {
+  initWorkflow(workflowId: number): Promise<WorkflowState> {
+    throw new Error('Method not implemented.');
+  }
+  validate(id: number): boolean {
+    throw new Error('Method not implemented.');
+  }
+  async execute(projectId: string): Promise<WorkflowTransition> {
     throw new Error('Method not implemented.');
   }
   async loadByStep(stepId: number): Promise<WorkflowState> {

@@ -6,6 +6,7 @@ export class Workflow {
   public readonly name: string;
   public readonly description: string;
   public readonly tags: Map<string, string>;
+  public readonly initStepId: number;
   public readonly steps: WorkflowStep[];
   public readonly createdAt: Date;
   public readonly updatedAt: Date;

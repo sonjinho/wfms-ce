@@ -46,7 +46,7 @@ export class WorkflowTransition {
    * 예를 들어, "알림 전송"과 같은 작업을 설정할 수 있습니다.
    * @type {string}
    */
-  public readonly action: string;
+  public readonly eventId: string;
 
   /**
    * WorkflowTransition 클래스의 생성자입니다.
@@ -70,7 +70,7 @@ export class WorkflowTransition {
     this.fromState = fromState;
     this.toState = toState;
     this.condition = condition;
-    this.action = action;
+    this.eventId = action;
     this.id = id;
   }
 }

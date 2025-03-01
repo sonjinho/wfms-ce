@@ -18,7 +18,7 @@ export class WorkflowAuthService implements WorkflowAuthUseCase {
   ) {}
   async create(workflowAuth: WorkflowAuth): Promise<WorkflowAuth> {
     const workflowId = workflowAuth.workflowId;
-    const workflow = await this.workflowUseCase.findOne(workflowId);
+    const workflow = await this.workflowUseCase.load(workflowId);
     if (!workflow) {
       throw new Error('Workflow not found');
     }

@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { WorkflowModule } from 'src/workflow/workflow.module';
 import { WorkflowStatePersistenceAdapter } from './adapter/persistence/workflow-state.persistence.adapter';
 import { WorkflowTransitionPersistenceAdapter } from './adapter/persistence/workflow-transition.persistence.adapter';
 import { WorkflowStateUseCase } from './application/ports/in/workflow-state.usecase';
@@ -12,7 +11,7 @@ import { WorkflowStateService } from './application/service/workflow-state.servi
 import { WorkflowTransitionService } from './application/service/workflow-transition.service';
 
 @Module({
-  imports: [WorkflowModule],
+  imports: [],
   controllers: [],
   providers: [
     {

@@ -1,4 +1,5 @@
 import { WorkflowStepPermission } from 'src/workflow-auth/domain/workflow-step-permissions';
+import { WorkflowStepEntity } from 'src/workflow/adapter/persistence/entity/workflow-step.entity';
 import {
   Column,
   Entity,
@@ -6,7 +7,6 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { WorkflowStepEntity } from '../../../../../workflow/adapter/persistence/workflow/entity/workflow-step.entity';
 
 @Entity('workflow_step_auths')
 export class WorkflowStepAuthEntity {
