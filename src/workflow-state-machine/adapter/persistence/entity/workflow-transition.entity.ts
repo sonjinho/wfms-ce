@@ -19,7 +19,7 @@ export class WorkflowTransitionEntity {
   @JoinColumn({ name: 'from_state_id' })
   fromState: WorkflowStateEntity;
 
-  @ManyToOne(() => WorkflowStateEntity)
+  @ManyToOne(() => WorkflowStateEntity, { nullable: true })
   @JoinColumn({ name: 'to_state_id' })
   toState: WorkflowStateEntity;
 

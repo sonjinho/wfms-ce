@@ -1,5 +1,12 @@
 import { WorkflowStepEntity } from 'src/workflow/adapter/persistence/entity/workflow-step.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { WorkflowTransitionEntity } from './workflow-transition.entity';
 
 @Entity('workflow_state')
 export class WorkflowStateEntity {
@@ -14,6 +21,7 @@ export class WorkflowStateEntity {
 
   @ManyToOne(() => WorkflowStepEntity, {
     eager: false,
+    onDelete: 'CASCADE',
   })
   step: WorkflowStepEntity;
 
@@ -22,4 +30,13 @@ export class WorkflowStateEntity {
 
   @Column({ default: false })
   final: boolean;
+
+  @OneToMany(
+    () => WorkflowTransitionEntity,
+    (transition) => transition.fromState,
+    {
+      eager: true,
+    },
+  )
+  transitions: WorkflowTransitionEntity[];
 }

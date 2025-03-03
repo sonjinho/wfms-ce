@@ -34,7 +34,7 @@ export class WorkflowEntity {
     nullable: true,
   })
   description: string;
-  @Column('hstore', {
+  @Column('jsonb', {
     nullable: true,
     name: 'tags',
   })
