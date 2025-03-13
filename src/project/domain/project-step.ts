@@ -1,4 +1,4 @@
-import { WorkflowState } from 'src/workflow-state-machine/domain/workflow-state';
+import { WorkflowNodeState } from 'src/workflow-core/domain/workflow-node-state';
 
 export class ProjectStep {
   public readonly id?: number;
@@ -7,7 +7,7 @@ export class ProjectStep {
   public readonly workflowStepId: number;
   public readonly name: string;
   public readonly inputs: Map<string, any>;
-  public readonly state?: WorkflowState;
+  public readonly state?: WorkflowNodeState;
   public readonly createdAt?: Date;
   public readonly updatedAt?: Date;
   public readonly deletedAt?: Date;
@@ -18,7 +18,7 @@ export class ProjectStep {
     workflowStepId: number,
     name: string,
     inputs: Map<string, any>,
-    state?: WorkflowState,
+    state?: WorkflowNodeState,
     createdAt?: Date,
     updatedAt?: Date,
     deletedAt?: Date,

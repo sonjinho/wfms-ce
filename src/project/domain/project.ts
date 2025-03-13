@@ -1,6 +1,6 @@
-import { WorkflowState } from 'src/workflow-state-machine/domain/workflow-state';
-import { Workflow } from 'src/workflow/domain/workflow';
-import { WorkflowStep } from 'src/workflow/domain/workflow.step';
+import { Workflow } from 'src/workflow-core/domain/workflow';
+import { WorkflowNode } from 'src/workflow-core/domain/workflow-node';
+import { WorkflowNodeState } from 'src/workflow-core/domain/workflow-node-state';
 import { v4 as uuid } from 'uuid';
 
 export enum ProjectStatus {
@@ -15,20 +15,20 @@ export class Project {
   public readonly id: string;
   public readonly handler?: string;
   public readonly name: string;
-  public readonly workflowId: number;
+  public readonly workflowId: string;
   public readonly inputs?: Map<string, any>;
-  public readonly current: WorkflowStep;
-  public readonly status: ProjectStatus;
-  public readonly state?: WorkflowState;
+  public readonly current: WorkflowNode;
+  public readonly status?: ProjectStatus;
+  public readonly state?: WorkflowNodeState;
   public readonly createdAt?: Date;
   public readonly updatedAt?: Date;
   public readonly deletedAt?: Date;
   constructor(
     name: string,
-    workflowId: number,
+    workflowId: string,
     handler: string,
-    current: WorkflowStep,
-    state: WorkflowState,
+    current: WorkflowNode,
+    state: WorkflowNodeState,
     status?: ProjectStatus,
     id?: string,
     inputs?: Map<string, any>,
@@ -53,8 +53,8 @@ export class Project {
     name: string,
     handlerId: string,
     workflow: Workflow,
-    state: WorkflowState,
+    state: WorkflowNodeState,
   ) {
-    return new Project(name, workflow.id, handlerId, workflow.steps[0], state);
+    return new Project(name, workflow.id, handlerId, workflow.nodes[0], state);
   }
 }

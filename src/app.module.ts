@@ -6,17 +6,14 @@ import { AppService } from './app.service';
 import { ProjectTimelineModule } from './project-timeline/project-timeline.module';
 import { ProjectModule } from './project/project.module';
 import { UsersModule } from './users/users.module';
-import { WorkflowAuthModule } from './workflow-auth/workflow-auth.module';
 import { WorkflowEventModule } from './workflow-event/workflow-event.module';
-import { WorkflowModule } from './workflow/workflow.module';
-import { WorkflowStateMachineModule } from './workflow-state-machine/workflow-state-machine.module';
+import { WorkflowCoreModule } from './workflow-core/workflow-core.module';
 
 @Module({
   imports: [
     EventEmitterModule.forRoot(),
     ProjectModule,
     ProjectTimelineModule,
-    WorkflowModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: '127.0.0.1', // docker-compose에서 서비스 이름
@@ -30,9 +27,8 @@ import { WorkflowStateMachineModule } from './workflow-state-machine/workflow-st
     ProjectModule,
     ProjectTimelineModule,
     WorkflowEventModule,
-    WorkflowAuthModule,
     UsersModule,
-    WorkflowStateMachineModule,
+    WorkflowCoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
